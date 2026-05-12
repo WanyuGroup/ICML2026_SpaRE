@@ -1,27 +1,23 @@
 # SpaRE: Controllable Molecule Generation via Sparse Representation Editing
 
+![workflow](asset/workflow.jpg)
+
 Official code for:
 
-> Controllable Molecule Generation via Sparse Representation Editing: An
-> Interpretability-Driven Perspective  
-> ICML 2026  
+> Controllable Molecule Generation via Sparse Representation Editing: An Interpretability-Driven Perspective (ICML 2026)
 > OpenReview: https://openreview.net/forum?id=ryO12fv5bJ
 
-This repository contains only the six basic SpaRE workflow scripts selected for
-release. Training checkpoints, SAE checkpoints, activation dumps, concept
-vectors, and generated molecules are produced locally by these scripts and are
-not included in the repository.
+Our demo is available at [![Demo](https://img.shields.io/badge/🔗_Demo-blue)](https://spare-paper.github.io/)
 
-The code is organized around text-to-molecule data such as ChEBI-20, where
-`text` is the natural-language prompt and `group_selfies` is the target
-molecular sequence:
+This repository contains the entire SpaRE workflow. The code is organized around text-to-molecule data such as ChEBI-20, where `text`  is the natural-language prompt and `group_selfies` is the target
+molecular sequence. Specifically, we open-source the following code:
 
-1. Fine-tune a causal molecular language model on Group SELFIES text.
+1. Fine-tune a molecular language model on Group SELFIES text.
 2. Collect transformer activations from selected layers.
-3. Train sparse autoencoders (SAEs) over activation shards.
+3. Train sparse autoencoders (SAEs) over activations.
 4. Extract local atom or functional-group control vectors.
 5. Extract global property control vectors.
-6. Run inference-time controlled generation through representation editing.
+6. Run controllable molecule generation through sparse representation editing.
 
 ## Repository Scope
 
@@ -35,11 +31,11 @@ Included:
 
 Supplied or generated locally by the training scripts:
 
-- Foundation-model weights.
+- Foundation model weights.
 - Fine-tuned model weights.
 - SAE weights.
 - Precomputed concept vectors.
-- Activation shards.
+- LLM activations.
 - Private datasets or benchmark splits not already redistributable.
 - Generated proprietary molecule candidates.
 
@@ -93,7 +89,7 @@ The upstream Group SELFIES project is Apache-2.0 licensed and is acknowledged
 in [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md), [NOTICE](NOTICE), and
 [docs/third_party.md](docs/third_party.md).
 
-## Six Public Scripts
+## Public Scripts
 
 The released public scripts are:
 
@@ -210,7 +206,6 @@ For reviewer-facing checks that do not require private artifacts, see
 
 ## Paper-To-Code Map
 
-- Paper metadata and citation: [CITATION.bib](CITATION.bib)
 - Section 3.1: `spare_molgen.sae.SparseAutoencoder`
 - Section 3.2, local control: `spare_molgen.concepts.build_local_concept`
   and `spare_molgen.hooks.ActivationEditor`
@@ -246,9 +241,9 @@ The outputs are written under `artifacts/`, which is ignored by git.
 
 ```bibtex
 @inproceedings{
-anonymous2026controllable,
+li2026controllable,
 title={Controllable Molecule Generation via Sparse Representation Editing: An Interpretability-Driven Perspective},
-author={Anonymous},
+author={Zhuoran Li, Xu Sun, Wanyu Lin, Chang Wen Chen},
 booktitle={Forty-third International Conference on Machine Learning},
 year={2026},
 url={https://openreview.net/forum?id=ryO12fv5bJ}
