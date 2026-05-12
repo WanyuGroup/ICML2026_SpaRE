@@ -243,7 +243,7 @@ The outputs are written under `artifacts/`, which is ignored by git.
 @inproceedings{
 li2026controllable,
 title={Controllable Molecule Generation via Sparse Representation Editing: An Interpretability-Driven Perspective},
-author={Zhuoran Li, Xu Sun, Wanyu Lin, Chang Wen Chen},
+author={Li, Zhuoran and Sun, Xu and Lin, Wanyu and Chen, Chang Wen},
 booktitle={Forty-third International Conference on Machine Learning},
 year={2026},
 url={https://openreview.net/forum?id=ryO12fv5bJ}
