@@ -1,0 +1,15 @@
+SpaRE: Controllable Molecule Generation via Sparse Representation Editing
+
+This repository uses the Group SELFIES molecular string representation in its
+data format and tokenization workflow.
+
+Group SELFIES project:
+  Repository: https://github.com/aspuru-guzik-group/group-selfies
+  License: Apache License 2.0
+  Authors listed by the upstream package metadata:
+    Austin Cheng, Andy Cai, Mario Krenn, Alston Lo, and many other contributors
+
+The Group SELFIES source code is not vendored in this repository. If users
+install or use the upstream Group SELFIES package, its Apache License 2.0 terms
+apply to that package.
+

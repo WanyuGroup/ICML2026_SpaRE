@@ -1,0 +1,11 @@
+model: path-or-hf-id
+data: data/public/train.jsonl
+prompt_column: text
+target_column: group_selfies
+output: artifacts/finetuned-lm
+epochs: 2
+batch_size: 64
+learning_rate: 5.0e-5
+max_length: 1024
+weight_decay: 0.0
+warmup_steps: 0

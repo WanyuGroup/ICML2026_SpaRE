@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "spare-molgen"
+version = "0.1.0"
+description = "Official SpaRE training and inference code for controllable molecule generation."
+readme = "README.md"
+requires-python = ">=3.10,<3.14"
+license = "Apache-2.0"
+dependencies = [
+  "accelerate>=0.28,<2",
+  "datasets>=2.18,<5",
+  "numpy>=1.24,<3",
+  "pandas>=2.0,<4",
+  "pyyaml>=6.0,<7",
+  "torch>=2.2,<3",
+  "tqdm>=4.66,<5",
+  "transformers>=4.40,<6",
+]
+
+[project.optional-dependencies]
+groupselfies = [
+  "group_selfies @ git+https://github.com/aspuru-guzik-group/group-selfies.git",
+]
+dev = [
+  "pytest>=8.0,<10",
+  "ruff>=0.4,<1",
+]
+
+[project.scripts]
+spare = "spare_molgen.cli:main"
+
+[project.urls]
+Paper = "https://openreview.net/forum?id=ryO12fv5bJ"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"

@@ -1,0 +1,11 @@
+activations: artifacts/activation_shards/layer_10
+output: artifacts/sae_layer_10.pt
+input_dim: null
+expansion_factor: 40
+epochs: 8
+batch_size: 1024
+learning_rate: 1.0e-4
+l1: 1.0e-5
+optimizer: adamw
+code_normalization: l2
+

@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.venv/
+venv/
+build/
+dist/
+*.egg-info/
+
+# Local experiment outputs. Do not commit weights, activations, concept vectors,
+# private datasets, logs, or generated molecules.
+artifacts/
+outputs/
+runs/
+wandb/
+checkpoints/
+activation_shards/
+concepts/
+data/private/
+
+# Model and tensor artifacts.
+*.bin
+*.ckpt
+*.gguf
+*.h5
+*.msgpack
+*.npy
+*.npz
+*.onnx
+*.pt
+*.pth
+*.safetensors
+
+# Local machine noise.
+.DS_Store
+
